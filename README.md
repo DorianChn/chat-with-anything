@@ -53,9 +53,9 @@ cwa ask https://github.com/owner/repo
 
 ```bash
 # 使用 OpenAI 兼容接口（OpenAI / DeepSeek / 通义 / 本地 Ollama 均可）
-cwa config set base_url https://api.deepseek.com/v1
-cwa config set api_key sk-xxxx
-cwa config set model deepseek-chat
+cwa config base_url https://api.deepseek.com/v1
+cwa config api_key sk-xxxx
+cwa config model deepseek-chat
 ```
 
 **没配 API key？** 会自动降级到本地 Ollama（需已安装并启动 `ollama serve`）。
@@ -70,7 +70,7 @@ cwa config set model deepseek-chat
 | `cwa index <数据源>` | 只建索引，输出 index_id |
 | `cwa chat <index_id>` | 对已有索引提问 |
 | `cwa list` | 列出所有索引 |
-| `cwa config set <key> <value>` | 配置模型/密钥 |
+| `cwa config <key> <value>` | 配置模型/密钥 |
 | `cwa show-config` | 查看当前配置（密钥脱敏） |
 
 ---

@@ -25,7 +25,7 @@ def build_store(cfg: Config, index_id: Optional[str] = None) -> BasePydanticVect
 
         from llama_index.vector_stores.chroma import ChromaVectorStore
 
-        return ChromaVectorStore(chroma_collection=chroma_collection)
+        return ChromaVectorStore(chroma_collection=chroma_collection, collection_name=collection)
 
     raise ValueError(f"不支持的向量库: {cfg.vector_store}")
 
