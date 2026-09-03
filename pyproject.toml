@@ -37,7 +37,7 @@ dependencies = [
 dev = ["pytest>=7.0", "ruff>=0.1"]
 
 [project.scripts]
-cwa = "cwa.cli:app"
+cwa = "cwa.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

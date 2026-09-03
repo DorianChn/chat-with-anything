@@ -131,5 +131,17 @@ def show_config() -> None:
         console.print(f"  {k}: {v}")
 
 
+def main() -> None:
+    """CLI 入口：捕获业务异常，干净地显示错误消息（不刷 traceback）。"""
+    try:
+        app()
+    except typer.Exit:
+        # 正常退出（如 --version、ask 无内容退出），透传
+        raise
+    except (RuntimeError, ValueError) as e:
+        console.print(f"[red]错误: {e}[/]")
+        raise SystemExit(1)
+
+
 if __name__ == "__main__":
-    app()
+    main()
