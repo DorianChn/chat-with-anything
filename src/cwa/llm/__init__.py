@@ -28,6 +28,6 @@ def build_llm(cfg: Config) -> LLM:
         raise RuntimeError(
             "未配置 API key，且本地 Ollama 不可用。\n"
             "请二选一：\n"
-            "  1) 运行 `cwa config set api_key sk-xxx` 配置密钥\n"
+            "  1) 运行 `cwa config api_key sk-xxx` 配置密钥\n"
             "  2) 安装并启动本地 Ollama（https://ollama.com）"
         )

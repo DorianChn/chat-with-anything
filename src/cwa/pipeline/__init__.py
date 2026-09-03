@@ -13,7 +13,19 @@ from ..store import build_store
 
 
 def _configure_embeddings(cfg: Config) -> None:
-    """配置 embedding：默认本地模型，可离线；也可切在线。"""
+    """配置 embedding：默认 HuggingFace 本地模型；也支持 Ollama（embed_model 设为 `ollama:<模型名>`）。
+
+    `ollama:` 前缀可完全离线（配合本机 Ollama 的 embedding 模型，如 bge-m3），
+    无需从 HuggingFace 下载模型。
+    """
+    if cfg.embed_model.startswith("ollama:"):
+        from llama_index.embeddings.ollama import OllamaEmbedding
+
+        Settings.embed_model = OllamaEmbedding(
+            model_name=cfg.embed_model.split(":", 1)[1]
+        )
+        return
+
     try:
         from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 

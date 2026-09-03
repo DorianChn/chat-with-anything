@@ -60,6 +60,18 @@ cwa config model deepseek-chat
 
 **没配 API key？** 会自动降级到本地 Ollama（需已安装并启动 `ollama serve`）。
 
+### 4. 完全离线跑通（可选）
+
+本机已装 Ollama、且已有 embedding 模型时，可把 embedding 也切到本地，全程不联网（无需下载 HuggingFace 模型）：
+
+```bash
+cwa config embed_model ollama:bge-m3     # 用 Ollama 的 embedding 模型
+cwa config ollama_model qwen3:0.6b       # 指定本机已有的 LLM 模型
+```
+
+> 提示：默认 embedding 模型 `bge-small-zh-v1.5` 首次运行会从 HuggingFace 下载；
+> 网络受限环境可设镜像 `HF_ENDPOINT=https://hf-mirror.com`，或用上面的 `ollama:` 方案完全离线。
+
 ---
 
 ## 命令一览
