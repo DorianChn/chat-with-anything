@@ -55,7 +55,7 @@ Show HN: Chat with anything — one command turns any URL/PDF/repo into a RAG ch
 - 索引持久化：建一次，秒开提问
 
 代码开源（MIT），欢迎 star 和提 issue。
-GitHub: https://github.com/<you>/chat-with-anything
+GitHub: https://github.com/DorianChn/chat-with-anything
 ```
 
 ---

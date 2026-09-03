@@ -104,7 +104,7 @@ cwa (CLI)
 ## 开发
 
 ```bash
-git clone https://github.com/<you>/chat-with-anything.git
+git clone https://github.com/DorianChn/chat-with-anything.git
 cd chat-with-anything
 pip install -e ".[dev]"
 cwa --help
