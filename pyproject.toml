@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chat-with-anything"
-version = "0.1.0"
+version = "0.1.1"
 description = "一行命令，把任意数据源（网页/PDF/文档/GitHub 仓库）变成能提问的 AI 助手"
 readme = "README.md"
 requires-python = ">=3.10"
